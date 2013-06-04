@@ -71,7 +71,7 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT message,
 		hdc = GetDC(hwnd);
 		GetClientRect(hwnd,&rt);
 		hMemDC = CreateCompatibleDC(hdc);
-		hMemBitmap = CreateCompatibleBitmap(hMemDC,rt.right-rt.left,rt.bottom-rt.top);
+		hMemBitmap = CreateCompatibleBitmap(hdc,rt.right-rt.left,rt.bottom-rt.top);
 		if(NULL == hMemDC || NULL == hMemBitmap)
 		{
 			MessageBox(hwnd,TEXT("创建内存DC或者内存位图失败"),TEXT(""),MB_OK);
